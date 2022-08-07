@@ -27,10 +27,7 @@ async function testGeoBlock() {
     try {
       await page.waitForSelector(".video__title", {timeout: 10000})
     } catch (err) { console.error('Channel is avalible, GeoBlock is not working!!!')}
-    let GeoBlock = await page.$eval(".video__title", (el) => el.innerText)
-    if (GeoBlock == 'Извинитe') {console.log('good')}
-    else //{console.error('Channel is avalible, GeoBlock is not working!!!')}
-    {await browser.close()}
+    await browser.close()
     console.log('checking done')
   } catch (err) {console.error('somethink wrong, check GeoBlock')};
 }
